@@ -1,7 +1,9 @@
 #!/use/bin/perl -w  #####################################
 #														#
-#		foodledo.pl - a geek grocery tool				#
+#		foodledo.pl - a geeks grocery tool				#
 #		(c) James Campbell 2010							#
+#		www.jambell.com/foodledo/						#
+#														#
 #		Released under the Perl Artistic				#
 #		License. For details, see:						#
 #		http://dev.perl.org/licenses/artistic.html		#
@@ -19,9 +21,20 @@ my $items_file = "./shopping_items.txt";
 my $shopping_cache = "./last_list.txt";
 #
 # Email address where the shopping list should be emailed
-my $email = 'james@jambell.com';
+my $to_email = 'james@example.com';
+#
+# If you have sendmail on your system, specify the path
+my $sendmail_path = '/usr/sbin/sendmail';
+#
+# End of Global configuration
 
-print "What do you want to do?\n\n  1) Show and select recipes\n  2) Add a new recipe\n  3) Quit\n\n";
+# Interactive mode
+print '
+What do you want to do?
+  1) Show and select recipes
+  2) Add a new recipe\n
+  3) Quit' . "\n\n";
+
 my $choice = 0;
 while($choice !~ /[1-3]/){
   $choice = <STDIN>;
@@ -39,10 +52,12 @@ else{
   exit;
 }
 
+### Subroutines ###
+
 sub select_recipes{
   my %recipes = parse_recipes($items_file);
   my @titles = keys(%recipes);
-  sort(@titles);
+  @titles = sort(@titles);
   print "Recipes available:\n==================\n\n";
   my %recipe_index;
   my $counter = 0;
@@ -51,18 +66,33 @@ sub select_recipes{
     $recipe_index{$counter} = $title;
     print "  $counter) $title\n";
   }
-  print "\nSelect your recipes.\nYou can select multiple items by number\n(separate them with spaces)\nthen hit [enter]...\n\n";
+  print '
+  Select your recipes.
+  You can select multiple items by number
+  (separate them with spaces)
+  then hit [enter]...' , "\n\n";
   my $selection = <STDIN>;
   chomp($selection);
+  if($selection eq ''){
+    print "No choices were made. Please type the numbers of the recipes you want. Separate numbers with spaces, then press enter.\n\n";
+    exit;
+  }
   my @selection = split(/[ \t]+/,$selection);
-  my $message = '';
+  my ($message, $menu, $shopping) = '';
+  
   foreach my $recipe (@selection){
     if(exists($recipe_index{$recipe})){
-      $message .= "$recipe_index{$recipe}\n$recipes{$recipe_index{$recipe}}\n\n";
+      $menu .= "$recipe_index{$recipe}\n";
+      $shopping .= "$recipes{$recipe_index{$recipe}}\n";
     }
   }
+  # sort the ingredients
+  my @shopping = split(/[\n\r]+/,$shopping);
+  @shopping = sort(@shopping);
+  $shopping = join("\n",@shopping);
+  $message = "Menu:\n=====\n$menu\n\n" . "Shopping:\n=========\n$shopping\n\n";
   &send_email($message);
-  print "The shopping list is:\n\n$message";
+  print "$message";
   open LOG, "> $shopping_cache" or die "Unable to write the shopping list to $shopping_cache:$!\n";
   print LOG "$message";
   close LOG;
@@ -85,7 +115,7 @@ sub parse_recipes {
     if ($_ =~ /^>[ ]*([^\n\r]+[\n\r]+)/){
       if(defined($title)){
         if(defined($title_items{$title})){
-          print "\n\n\nWARNING - THERE ARE TWO RECIPES WITH THE SAME TITLE - $title\n\n\n";
+          print "\n\n\nWARNING - There are two recipes called $title\n\n\n";
         }
         $title_items{$title} = $items;
         $title = undef;
@@ -104,10 +134,10 @@ sub parse_recipes {
     }
   }
   close INPUT;
-  # Process one more time to get the last entry in the fasta file...
+  # Process one more time to get the last entry in recipes file
   if(defined($title)){
     if(defined($title_items{$title})){
-      warn "\n\n\nWARNING - THERE ARE TWO RECIPES WITH THE SAME TITLE - $title\n\n\n";
+      warn "\n\n\nWARNING - There are two recipes called $title\n\n\n";
     }
     $title_items{$title} = $items;
   }
@@ -116,17 +146,17 @@ sub parse_recipes {
 
 sub send_email{
   my $message = shift(@_);
-  my $from_name = "FDLDO_mailer";
-  my $from_email = 'no_reply@jambell.com';
+  my $from_name = "Foodledo Menu and Shopping";
+  my $from_email = 'no_reply@example.com';
   my $subject = "Shopping List";  
-  open MAIL, "| /usr/sbin/sendmail -t -F'$from_name' -f'$from_email'" or die "Could not open sendmail: $!";
+  open MAIL, "| $sendmail_path -t -F'$from_name' -f'$from_email'" or die "Could not open sendmail: $!";
   print MAIL <<END_OF_MESSAGE;
-To: $email
+To: $to_email
 Subject: $subject
 
 $message
 END_OF_MESSAGE
   close MAIL or die "Could not close sendmail: $!";  
-  print "Your shopping list has been sent\n\n";
+  print "Your shopping list has been sent to $to_email\n\n";
 }
 
