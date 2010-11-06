@@ -117,6 +117,8 @@ sub add_recipe{
     print "Enter a recipe title:\n";
     my $title = <STDIN>;
     chomp($title);
+    print "Now enter the ingredients - 1 per line with amount and units at the end\n";
+    print "When you're done, type 'quit'\n\n";
     my $ingredients = '';
     my $quit = undef;
     while(!defined($quit)){

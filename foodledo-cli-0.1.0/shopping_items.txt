@@ -6,7 +6,7 @@
 #		menu title starts with a '>'
 #		ingredients are on non-blank lines
 #		final two white-space-separated values on the 
-#			igredient lines are amount and units.
+#		igredient lines are amount and units.
 #		Some recipes near the top are not recipes but stuff like loo roll
 #
 #

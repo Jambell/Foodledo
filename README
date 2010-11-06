@@ -1,0 +1,11 @@
+Foodledo.pl - A geeks grocery tool
+==================================
+
+Updated: 5th November 2010.
+
+If you have Perl installed, change directory to the foodledo-cli-?.?.? directory and type:
+
+perl foodledo.pl
+
+You will enter and interactive mode where you can either select recipes for the shopping list (together with stuff like loo roll) or add new recipes to those stored.
+
