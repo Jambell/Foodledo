@@ -98,8 +98,42 @@ sub select_recipes{
   close LOG;
 }
 
-sub add_recipes{
-  
+sub add_recipe{
+  print '
+  You are about to add one or more recipes
+  to your recipe items file: ', "$items_file",'
+  You need to provide a title, followed
+  by a line for each ingredient. The last two
+  things on the ingredient lines should be an
+  amount and a value (like 200 g or 30 mL).
+  When you are done entering ingredients, type:
+  done
+  and you\'ll be asked if you want to add
+  another recipe. 
+  ', "\n\n";
+  open RECIPES, ">> $items_file" or die "Cannot append recipes to the recipes file $items_file:$!\n";
+  my $add_more = 'yes';
+  while($add_more !~ /^(n|N|no|NO|No|nO)/){
+    print "Enter a recipe title:\n";
+    my $title = <STDIN>;
+    chomp($title);
+    my $ingredients = '';
+    my $quit = undef;
+    while(!defined($quit)){
+      my $line = <STDIN>;
+      chomp($line);
+      if($line =~ /quit/){
+        $quit = 1;
+      }
+      else{
+        $ingredients .= "$line\n";
+      }
+    }
+    print RECIPES ">$title\n$ingredients\n";
+    print "Add another recipe (Y/N)?\n";
+    $add_more = <STDIN>;
+  }
+  close RECIPES;
 }
 
 sub parse_recipes {

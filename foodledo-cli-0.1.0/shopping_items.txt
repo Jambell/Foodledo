@@ -28,13 +28,13 @@ conditioner 500 ml
 > Toothpaste
 toothpaset 100 ml
 
-> Alex's toothpaste
+> Toothpaste for kids
 Little teeth toothpaste 50 ml
 
 > Laundry liquid
 laundry liquid 2.5 L
 
-> coffee
+> Coffee
 Lavazza coffee 250 g
 
 > Sugar
@@ -55,7 +55,7 @@ wipes 2 packs
 ### recipes start here... ###
 
 > Sanwiches for lunch
-bread 1 load
+bread 1 loaf
 tuna 4 cans
 ham 1 pack
 cheese 200 g
@@ -99,6 +99,4 @@ tinned tomatoes 400 g
 tomato puree 50 g
 onion 1 x
 rosmary 1 sprig
-
-
 
