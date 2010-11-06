@@ -1,4 +1,4 @@
-#!/use/bin/perl -w  #####################################
+#!/usr/bin/perl -w  #####################################
 #														#
 #		foodledo.pl - a geeks grocery tool				#
 #		(c) James Campbell 2010							#
