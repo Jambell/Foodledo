@@ -1,6 +1,7 @@
 #
 # Shopping items file for Foodledo CLI
-# James Campbell 2010
+# (c) James Campbell 2010.
+#     http://jambell.com/foodledo
 #
 # Format is :
 #		menu title starts with a '>'
@@ -108,4 +109,93 @@ Rice cakes 1 pack
 
 >Baby food (3)
 Fromage Frais 12 pots
+
+> Asian Infused Tuna (serves 3-4) Return of the Naked Chef (Jamie Oliver) p51.
+Tuna (bluefin) 225 g
+avacado 1 x
+limes 2 x
+chillie 1 x
+sesame oil 1.5 tablespoons
+coconut milk 2 tablespoons
+corriander (fresh chopped) 1 handful
+sesame sees 1 tablespoon
+fresh ginger (peeled) 1 bit
+soy sauce 1 x
+
+> Risotto - lemon thyme, proscuito, pecorino and goats cheese (serves 3) Return of the Naked Chef (Jamie Oliver) basic recipe on p135 plus notes on p138.
+Stock (chicken fish or veg) 0.55 L
+olive oil 8 mL
+onion 1 x
+garlic 1 clove
+risotto rice 200 g
+white wine or dry vermouth 1 glass
+salt 1 x
+crushed pepper 1 x
+parmesan cheese 60 g
+lemon thyme 1 handfull_good
+pecorino cheese (grated) 60 g
+goats cheese (crumbled) 80 g
+proscuito 4 slices
+
+> Risotto - Prawn and Pea with basil and mint (serves 3) Return of the Naked Chef (Jamie Oliver) basic recipe on p135 plus notes on p143.
+Stock (chicken fish or veg) 0.55 L
+olive oil 8 mL
+onion 1 x
+garlic 1 clove
+risotto rice 200 g
+white wine or dry vermouth 1 glass
+salt 1 x
+crushed pepper 1 x
+Peas 1.5 handfuls
+butter 1 knob
+prawns (peeled) 225 g
+basil (chopped) 1 handful
+mint (chopped) 0.5 handful
+lemon (juice) 0.5 x
+olive oil 1 glug
+
+> Tray baked cod with runner beans, pancetta and pine nuts (serves 2) Return of the Naked Chef (Jamie Oliver) p150
+runner beans (trimmed) 340 g
+garlic 1 clove
+olive oil 4 glugs
+cod steaks (on the bone) 450 g
+smoked pancetta or streaky bacon 6 slices
+pine nuts 1 handful
+lemon (halved) 1 x
+
+> Fish Pie (serves 6) Return of the Naked Chef (Jamie Oliver) p159
+potatoes 5 large
+eggs (free range) 2 x
+spinache 2 handfuls
+onion 1 x
+carrot 1 x
+extra virgin olive oil 1 x
+double cream 285 mL
+cheddar cheese 2 handfuls
+lemon (juiced) 1 x
+English mustard 1 teaspoon
+haddock or cod (skinned, pin boned) 455 g
+
+> Warm Bread Salad of Crispy Pancetta, Parmesan and Poached Egg (serves 4) Happy days with the Naked Chef (Jamie Oliver) p106
+ciabatta 1 loaf
+extra virgin olive oil 1 x
+garlic 1 clove
+salt 1 x
+pepper (ground) 1 x
+pancetta or dry cured streak bacon 12 slices
+lemon (juiced) 1 x
+eggs (very fresh and preferably organic) 4 x
+rocket 3 handfuls
+oak leaf lettuce 100 g
+parmesan cheese 1 block
+
+> Carbonara with Penne (serves 4) Happy days with the Naked Chef (Jamie Oliver) p129
+dried Penne 455 g
+pancetta or dry cured streaky bacon 10 slices
+olive oil 1 x
+eggs yolks (organic) 5 x
+double cream 100 mL
+parmesan cheese 60 g
+salt 1 x
+black pepper (crushed) 1 x
 

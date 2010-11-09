@@ -21,7 +21,7 @@ my $items_file = "./shopping_items.txt";
 my $shopping_cache = "./last_list.txt";
 #
 # Email address where the shopping list should be emailed
-my $to_email = 'james@example.com';
+my $to_email = 'james@jambell.com';
 #
 # If you have sendmail on your system, specify the path
 my $sendmail_path = '/usr/sbin/sendmail';
@@ -33,7 +33,7 @@ print '
 What do you want to do?
   1) Show and select recipes
   2) Add a new recipe\n
-  3) Quit' . "\n\n";
+  3) Quit' . "\n\nYour choice> ";
 
 my $choice = 0;
 while($choice !~ /[1-3]/){
@@ -55,6 +55,7 @@ else{
 ### Subroutines ###
 
 sub select_recipes{
+  print "\n\n";
   my %recipes = parse_recipes($items_file);
   my @titles = keys(%recipes);
   @titles = sort(@titles);
@@ -70,7 +71,7 @@ sub select_recipes{
   Select your recipes.
   You can select multiple items by number
   (separate them with spaces)
-  then hit [enter]...' , "\n\n";
+  then hit [enter]...' , "\n\nYour Selection> ";
   my $selection = <STDIN>;
   chomp($selection);
   if($selection eq ''){
@@ -103,6 +104,7 @@ sub select_recipes{
 }
 
 sub add_recipe{
+  print "\n\n";
   print '
   You are about to add one or more recipes
   to your recipe items file: ', "$items_file",'
