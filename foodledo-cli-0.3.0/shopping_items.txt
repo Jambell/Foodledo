@@ -1,0 +1,201 @@
+#
+# Shopping items file for Foodledo CLI
+# (c) James Campbell 2010.
+#     http://jambell.com/foodledo
+#
+# Format is :
+#		menu title starts with a '>'
+#		ingredients are on non-blank lines
+#		final two white-space-separated values on the 
+#		igredient lines are amount and units.
+#		Some recipes near the top are not recipes but stuff like loo roll
+#
+#
+
+### Non-recipes here... ###
+
+> Loo roll
+toilet paper 9 rolls
+
+> Butter
+margerine 500 g
+
+> Shampoo
+shampoo 500 ml
+
+> Conditioner
+conditioner 500 ml
+
+> Toothpaste
+toothpaset 100 ml
+
+> Toothpaste for kids
+Little teeth toothpaste 50 ml
+
+> Laundry liquid
+laundry liquid 2.5 L
+
+> Coffee
+Lavazza coffee 250 g
+
+> Sugar
+sugar 1 kg
+
+> Fruit jiuce
+juice 3 L
+
+> Baby food
+Ella's Kitchen pouches 10 x
+
+> Nappies
+nappes 38 x
+
+> Wipes
+wipes 2 packs
+
+### recipes start here... ###
+
+> Sanwiches for lunch
+bread 1 loaf
+tuna 4 cans
+ham 1 pack
+cheese 200 g
+
+> Boiled eggs for breakfast
+eggs 12 x
+bread 1 loaf
+
+> Pain au chocolat for breakfast
+pain au chocolat 8 x
+
+> Fajitas (serves 3)
+chicken 300 g
+soured cream 100 ml
+tortilla wrap 6 x
+onion 1 x
+red pepper 1 x
+avacdo 1 x
+
+> Chicken Korma (Serves 4)
+chicken thigh fillets 4 x
+Korma sauce (Pataks) 500 g
+rice 2 cups
+
+> Fish Pie (serves 4)
+potatoes 4 x
+carrot 1 x
+double cream 250 ml
+lemon 1 x
+skinless fish 450 g
+egg 2 x
+mustard 1 teaspn
+onion 1 x
+cheese 50 g
+
+> Spag Bol (serves 4)
+minced beef 450 g
+bacon 4 rashers
+red wine 1 glass
+tinned tomatoes 400 g 
+tomato puree 50 g
+onion 1 x
+rosmary 1 sprig
+
+>Baby food (1)
+Fruit pots 8 pots
+
+>Baby food (2)
+Rice cakes 1 pack
+
+>Baby food (3)
+Fromage Frais 12 pots
+
+> Asian Infused Tuna (serves 3-4) Return of the Naked Chef (Jamie Oliver) p51.
+Tuna (bluefin) 225 g
+avacado 1 x
+limes 2 x
+chillie 1 x
+sesame oil 1.5 tablespoons
+coconut milk 2 tablespoons
+corriander (fresh chopped) 1 handful
+sesame sees 1 tablespoon
+fresh ginger (peeled) 1 bit
+soy sauce 1 x
+
+> Risotto - lemon thyme, proscuito, pecorino and goats cheese (serves 3) Return of the Naked Chef (Jamie Oliver) basic recipe on p135 plus notes on p138.
+Stock (chicken fish or veg) 0.55 L
+olive oil 8 mL
+onion 1 x
+garlic 1 clove
+risotto rice 200 g
+white wine or dry vermouth 1 glass
+salt 1 x
+crushed pepper 1 x
+parmesan cheese 60 g
+lemon thyme 1 handfull_good
+pecorino cheese (grated) 60 g
+goats cheese (crumbled) 80 g
+proscuito 4 slices
+
+> Risotto - Prawn and Pea with basil and mint (serves 3) Return of the Naked Chef (Jamie Oliver) basic recipe on p135 plus notes on p143.
+Stock (chicken fish or veg) 0.55 L
+olive oil 8 mL
+onion 1 x
+garlic 1 clove
+risotto rice 200 g
+white wine or dry vermouth 1 glass
+salt 1 x
+crushed pepper 1 x
+Peas 1.5 handfuls
+butter 1 knob
+prawns (peeled) 225 g
+basil (chopped) 1 handful
+mint (chopped) 0.5 handful
+lemon (juice) 0.5 x
+olive oil 1 glug
+
+> Tray baked cod with runner beans, pancetta and pine nuts (serves 2) Return of the Naked Chef (Jamie Oliver) p150
+runner beans (trimmed) 340 g
+garlic 1 clove
+olive oil 4 glugs
+cod steaks (on the bone) 450 g
+smoked pancetta or streaky bacon 6 slices
+pine nuts 1 handful
+lemon (halved) 1 x
+
+> Fish Pie (serves 6) Return of the Naked Chef (Jamie Oliver) p159
+potatoes 5 large
+eggs (free range) 2 x
+spinache 2 handfuls
+onion 1 x
+carrot 1 x
+extra virgin olive oil 1 x
+double cream 285 mL
+cheddar cheese 2 handfuls
+lemon (juiced) 1 x
+English mustard 1 teaspoon
+haddock or cod (skinned, pin boned) 455 g
+
+> Warm Bread Salad of Crispy Pancetta, Parmesan and Poached Egg (serves 4) Happy days with the Naked Chef (Jamie Oliver) p106
+ciabatta 1 loaf
+extra virgin olive oil 1 x
+garlic 1 clove
+salt 1 x
+pepper (ground) 1 x
+pancetta or dry cured streak bacon 12 slices
+lemon (juiced) 1 x
+eggs (very fresh and preferably organic) 4 x
+rocket 3 handfuls
+oak leaf lettuce 100 g
+parmesan cheese 1 block
+
+> Carbonara with Penne (serves 4) Happy days with the Naked Chef (Jamie Oliver) p129
+dried Penne 455 g
+pancetta or dry cured streaky bacon 10 slices
+olive oil 1 x
+eggs yolks (organic) 5 x
+double cream 100 mL
+parmesan cheese 60 g
+salt 1 x
+black pepper (crushed) 1 x
+
