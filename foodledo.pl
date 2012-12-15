@@ -16,14 +16,15 @@ use Getopt::Long;
 # Global configuration
 my $items_file = "./shopping_items.txt";		# file were the recipes and items are stored
 my $shopping_cache = "./last_list.txt";			# log file where the current recipe is stored when emailing
-my $to_email = 'james@jambell.com';				# Email address where the shopping list should be emailed
+my $to_email = 'james@jambell.com';			# Email address where the shopping list should be emailed
 my $sendmail_path = '/usr/sbin/sendmail';		# If you have sendmail on your system, specify the path
 # End of Global configuration
-												# --file FILENAME
-												# --email ADDRESS
-												# --sendmail PATHTOSENDMAIL
-my $selection = undef;							# --select "1 2 3 14" // list of numeric values
-my $recipe = undef;								# --add ">title\ningredient 1 x\ningredients 2 x"
+							# --file FILENAME
+							# --email ADDRESS
+							# --sendmail PATHTOSENDMAIL
+my $selection = undef;					# --select "1 2 3 14" // list of numeric values
+my $recipe = undef;					# --add ">title\ningredient 1 x\ningredients 2 x"
+my $auto = undef;
 my $help = undef;
 
 GetOptions (
@@ -31,9 +32,15 @@ GetOptions (
   "email=s" => \$to_email,
   "sendmail=s" => \$sendmail_path,
   "select=s" => \$selection,
-  "add=s" => \$recipe,  
+  "add=s" => \$recipe,
+  "auto=s" => $auto,
   "help" => \$help,
   );
+
+if(defined($auto)){
+  &auto_generate();
+  exit;
+}
 
 if($#ARGV == -1){
   &interactive();
@@ -56,6 +63,13 @@ if(defined($help)) {
 }
 
 ### Subroutines ###
+
+
+sub auto_generate{
+  # auto generate a recipe using some sensible heuristics.
+
+}
+
 
 sub interactive{
   print '
