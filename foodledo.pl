@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w  #####################################
 #                                                       #
 #       foodledo.pl - a geeks grocery tool              #
-#       (c) James Campbell 2010                         #
+#       (c) James Campbell 2010-2013                    #
 #       www.jambell.com/foodledo/                       #
 #                                                       #
 #       Released under the Perl Artistic                #
@@ -11,6 +11,7 @@
 #########################################################
 
 use strict;
+use Getopt::Long;
 
 # Global configuration
 #
@@ -34,44 +35,36 @@ my $sendmail_path = '/usr/sbin/sendmail';
 # --select "1 2 3 14" // list of numeric values
 # --add ">title\ningredient 1 x\ningredients 2 x"
 
+my $selection = undef;
+my $recipe = undef;
+my $help = undef;
+GetOptions (
+  "file=s" => \$items_file,
+  "email=s" => \$to_email,
+  "sendmail=s" => \$sendmail_path,
+  "select=s" => \$selection,
+  "add=s" => \$recipe,  
+  "help" => \$help,
+  );
+
 if($#ARGV == -1){
   &interactive();
   exit;
 }
-my %cmd_args;
-for(my $i=0; $i <= $#ARGV; $i ++){
-  if($ARGV[$i] =~ /^([\-]{2}[^ ]+)/){
-    $cmd_args{$1} = $ARGV[$i + 1];
-    if(exists($ARGV[$i + 2])){
-      if($ARGV[$i + 2] !~ /^[\-]{2}/){
-        warn "Found unquoted multi-word command line arguments... please check... continuing...\n";
-      }
-    }
-  }
-  else{
-    next;
-  }
-}
 
-if(exists($cmd_args{"--file"})){
-  $items_file = $cmd_args{"--file"};
-}
-if(exists($cmd_args{"--email"})){
-  $to_email = $cmd_args{"--email"};
-}
-if(exists($cmd_args{"--sendmail"})){
-  $sendmail_path = $cmd_args{"--sendmail"};
-}
 
-if(exists($cmd_args{"--select"})){
-  my $selection = $cmd_args{"--select"};
+if(defined($recipe)){
+  &add_recipe($recipe);
+  exit;
+}
+elsif(defined($selection)){
   &select_recipes($selection);
   exit;
 }
-elsif(exists($cmd_args{"--add"})){
-  my $recipe = $cmd_args{"--add"};
-  &add_recipe($recipe);
-  exit;
+
+if(defined($help)) {
+  &usage;
+  exit(0);
 }
 
 
