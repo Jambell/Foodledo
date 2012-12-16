@@ -14,17 +14,16 @@ use strict;
 use Getopt::Long;
 
 # Global configuration
+my $to_email = 'james@jambell.com';                     # Email address where the shopping list should be emailed
+my $sendmail_path = '/usr/sbin/sendmail';               # If you have sendmail on your system, specify the path
 my $items_file = "./shopping_items.txt";		# file were the recipes and items are stored
 my $shopping_cache = "./last_list.txt";			# log file where the current recipe is stored when emailing
-my $to_email = 'james@jambell.com';			# Email address where the shopping list should be emailed
-my $sendmail_path = '/usr/sbin/sendmail';		# If you have sendmail on your system, specify the path
-# End of Global configuration
 							# --file FILENAME
 							# --email ADDRESS
 							# --sendmail PATHTOSENDMAIL
 my $selection = undef;					# --select "1 2 3 14" // list of numeric values
 my $recipe = undef;					# --add ">title\ningredient 1 x\ningredients 2 x"
-my $auto = undef;
+my $auto = undef					# --auto [0-9]+ // number of days to get recipes for;
 my $help = undef;
 
 GetOptions (
@@ -33,12 +32,12 @@ GetOptions (
   "sendmail=s" => \$sendmail_path,
   "select=s" => \$selection,
   "add=s" => \$recipe,
-  "auto=s" => $auto,
+  "auto=i" => \$auto,
   "help" => \$help,
   );
 
 if(defined($auto)){
-  &auto_generate();
+  &auto_generate($auto);
   exit;
 }
 
@@ -67,6 +66,12 @@ if(defined($help)) {
 
 sub auto_generate{
   # auto generate a recipe using some sensible heuristics.
+  my $number_days = shift(@_);
+
+  my %recipes = parse_recipes($items_file);
+  my @titles = keys(%recipes);
+  my $max_recipe_num = 1 + $#titles;
+  my $selection = '';
 
 }
 
@@ -159,9 +164,11 @@ sub add_recipe{
   by a line for each ingredient. The last two
   things on the ingredient lines should be an
   amount and a value (like 200 g or 30 mL).
+  you can also optionally add a text lable in
+  parens to indicate where in a shop the item
+  might be found such as (fruit veg).
   When you are done entering ingredients, type:
-  done
-  and you\'ll be asked if you want to add
+  quit and you\'ll be asked if you want to add
   another recipe. 
   ', "\n\n";
   # Read in the existing recipes so we can avoid overwritting data... Allow but add something to make unique.
@@ -225,7 +232,7 @@ sub parse_recipes {
     if ($_ =~ /^>[ ]*([^\n\r]+[\n\r]+)/){
       if(defined($title)){
         if(defined($title_items{$title})){
-          print "\n\n\nWARNING - There are two recipes called $title\n\n\n";
+          warn "\n\nWARNING - There are two recipes called $title\n\n\n";
         }
         $title_items{$title} = $items;
         $title = undef;
