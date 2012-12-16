@@ -1,0 +1,198 @@
+# Shopping items file for Foodledo CLI
+# (c) James Campbell 2010-2013.
+#     http://jambell.com/foodledo
+#
+# Format is :
+#		menu title starts with a '>'
+#		ingredients are on non-blank lines
+#		if given in parens, the first word hints at the location in a shop
+#		final two white-space-separated values on the 
+#		ingredient lines are amount and units.
+#		Some recipes near the top are not recipes but stuff like loo roll
+
+### Non-recipes here... ###
+
+> bathroom and kitchen essentials
+(toiletries) toilet paper 9 rolls
+(toiletries) shampoo 500 ml
+(toiletries) conditioner 500 ml
+(toiletries) toothpaset 100 ml
+(toiletries) Little teeth toothpaste 50 ml
+(toiletries) laundry liquid 2.5 L
+
+#> Baby stuff
+#Ella's Kitchen pouches 10 x
+#nappies 38 x
+#wet wipes 2 packs
+#Rice cakes 1 pack
+#Fruit pots 8 pots
+#Fromage Frais 12 pots
+
+> Kitchen cupboard essentials
+(dairy) butter/margerine 500 g
+(bakery) Lavazza coffee 250 g
+(bakery) sugar 1 kg
+(dairy) juice 3 L
+
+### recipes start here... ###
+
+> Sanwiches for lunch
+(bakery) bread 1 loaf
+(frozen) tuna 4 cans
+(meats) ham 1 pack
+(dairy) cheese 200 g
+
+> Boiled eggs for breakfast
+(dairy) eggs 12 x
+(bakery) bread 1 loaf
+
+> Pain au chocolat for breakfast
+(bakery)pain au chocolat 8 x
+
+> Fajitas (serves 3)
+(meats) chicken 300 g
+(dairy) soured cream 100 ml
+(bakery) tortilla wrap 6 x
+(veg) onion 1 x
+(veg) red pepper 1 x
+(veg) avacado 1 x
+
+> Chicken Korma (Serves 4)
+(meats) chicken thigh fillets 4 x
+(dried) Korma sauce (Pataks) 500 g
+(dried) rice 2 cups
+
+> Fish Pie (serves 4)
+(veg) potatoes 4 x
+(veg) carrot 1 x
+(dairy) double cream 250 ml
+(veg) lemon 1 x
+(meats) skinless fish 450 g
+(dairy) egg 2 x
+(dried) mustard 1 teaspn
+(veg) onion 1 x
+(dairy) cheese 50 g
+
+> Spag Bol (serves 4)
+(meats) minced beef 450 g
+(meats) bacon 4 rashers
+(drinks) red wine 1 glass
+(dried) tinned tomatoes 400 g 
+(dried) tomato puree 50 g
+(veg) onion 1 x
+(veg) rosmary 1 sprig
+
+> Asian Infused Tuna (serves 3-4) Return of the Naked Chef (Jamie Oliver) p51.
+(meats) Tuna (bluefin) 225 g
+(veg) avacado 1 x
+(veg) limes 2 x
+(veg) chillie 1 x
+(dried) sesame oil 1.5 tablespoons
+(dried) coconut milk 2 tablespoons
+(veg) corriander (fresh chopped) 1 handful
+(dried) sesame seeds 1 tablespoon
+(veg) fresh ginger (peeled) 1 bit
+(dried) soy sauce 1 x
+
+> Risotto - lemon thyme, proscuito, pecorino and goats cheese (serves 3) Return of the Naked Chef (Jamie Oliver) basic recipe on p135 plus notes on p138.
+(dried) Stock (chicken fish or veg) 0.55 L
+(dried) olive oil 8 mL
+(veg) onion 1 x
+(veg) garlic 1 clove
+(dried) risotto rice 200 g
+(drinks) white wine or dry vermouth 1 glass
+(dried) salt 1 x
+(dried) crushed black pepper 1 x
+(dairy) parmesan cheese 60 g
+(veg) lemon thyme 1 handfull_good
+(dairy) pecorino cheese (grated) 60 g
+(dairy) goats cheese (crumbled) 80 g
+(meats) proscuito 4 slices
+
+> Risotto - Prawn and Pea with basil and mint (serves 3) Return of the Naked Chef (Jamie Oliver) basic recipe on p135 plus notes on p143.
+(dried) Stock (chicken fish or veg) 0.55 L
+(dried) olive oil 8 mL
+(veg) onion 1 x
+(veg) garlic 1 clove
+(dried) risotto rice 200 g
+(drinks) white wine or dry vermouth 1 glass
+(dried) salt 1 x
+(dried) crushed pepper 1 x
+(frozen) Peas 1.5 handfuls
+(dairy) butter 1 knob
+(frozen) prawns (peeled) 225 g
+(veg) basil (chopped) 1 handful
+(veg) mint (chopped) 0.5 handful
+(veg) lemon (juice) 0.5 x
+(dried) olive oil 1 glug
+
+> Tray baked cod with runner beans, pancetta and pine nuts (serves 2) Return of the Naked Chef (Jamie Oliver) p150
+(veg) runner beans (trimmed) 340 g
+(veg) garlic 1 clove
+(dried) olive oil 4 glugs
+(meats) cod steaks (on the bone) 450 g
+(meats) smoked pancetta or streaky bacon 6 slices
+(dried) pine nuts 1 handful
+(veg) lemon (halved) 1 x
+
+> Fish Pie (serves 6) Return of the Naked Chef (Jamie Oliver) p159
+(veg) potatoes 5 large
+(dairy) eggs (free range) 2 x
+(veg) spinach 2 handfuls
+(veg) onion 1 x
+(veg) carrot 1 x
+(dried) extra virgin olive oil 1 x
+(dairy) double cream 285 mL
+(dairy) cheddar cheese 2 handfuls
+(veg) lemon (juiced) 1 x
+(dried) English mustard 1 teaspoon
+(meats) haddock or cod (skinned, pin boned) 455 g
+
+> Warm Bread Salad of Crispy Pancetta, Parmesan and Poached Egg (serves 4) Happy days with the Naked Chef (Jamie Oliver) p106
+(bakery) ciabatta 1 loaf
+(dried) extra virgin olive oil 1 x
+(veg) garlic 1 clove
+(dried) salt 1 x
+(dried) black pepper (ground) 1 x
+(meats) pancetta or dry cured streak bacon 12 slices
+(veg) lemon (juiced) 1 x
+(dairy) eggs (very fresh and preferably organic) 4 x
+(veg) rocket 3 handfuls
+(veg) oak leaf lettuce 100 g
+(dairy) parmesan cheese 1 block
+
+> Carbonara with Penne (serves 4) Happy days with the Naked Chef (Jamie Oliver) p129
+(dried) dried Penne 455 g
+(meats) pancetta or dry cured streaky bacon 10 slices
+(dried) olive oil 1 x
+(dairy) eggs yolks (organic) 5 x
+(dairy) double cream 100 mL
+(dairy) parmesan cheese 60 g
+(dried) salt 1 x
+(dried) black pepper (crushed) 1 x
+
+> Bangers and Mash with broccoli and ready-made Yorkshire
+(meats) Sausages 12 fatuns
+(veg) potatoes 0.5 kg
+(veg) broccoli 1 bunch
+(frozen) ready-made Yorkshire pudding squares 3 x
+(dried) gravey granuals 4 teaspoons
+
+> Seafood Paella (serves 4) A little taste of Spain (p82)
+(veg) ripe tomato 1 x
+(drinks) glass of white wine 125 mL
+(dried) olive oil 125 mL
+(veg) red onion 0.5 x
+(veg) garlic, crushed 4 cloves
+(veg) red pepper 1 x
+(meats) chorizo 90 g
+(dried) medium grain rice 220 g
+(dried) saffron threads 0.25 teaspoon
+(dried) chicken stock 500 mL
+(frozen) peas 85 g
+(frozen) prawns
+
+> Poached eggs on muffins with Marmite
+(dairy) eggs 14 large
+(bakery) muffins 7 x
+
